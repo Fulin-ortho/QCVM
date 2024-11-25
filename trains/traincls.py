@@ -17,7 +17,7 @@ import os
 
 
 def train():
-    epochs = 100
+    epochs = 400
     net = MainNet()
     loss_mse_fn = nn.CrossEntropyLoss()
     opt = optim.Adam(net.parameters(), lr=0.0001,weight_decay=1e-5)
