@@ -17,7 +17,7 @@ import argparse
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--epochs", default="100", type=int)
-parser.add_argument("--lr", default="0.001", type=float)
+parser.add_argument("--lr", default="0.0001", type=float)
 args = parser.parse_args()
 batch_size = 2
 def train(point,name):
@@ -47,8 +47,8 @@ def train(point,name):
         for dir in   ['train.txt','val.txt']:
             if dir =='train.txt':
                 if epoch%40==3 and epoch>40:
-                    lr = lr*0.95**epoch
-                    optimizer = optim.Adam(net.parameters(), lr=lr,weight_decay=1e-5 )
+                    lr = lr*0.95
+                    opt = optim.Adam(net.parameters(), lr=lr,weight_decay=1e-5 )
 
                 dataloader = torch.utils.data.DataLoader(MyDataset(r'../train_data/{}/train.txt'.format(name)),
                                                          batch_size=batch_size,
