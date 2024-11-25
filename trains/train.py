@@ -16,7 +16,7 @@ import argparse
 
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument("--epochs", default="100", type=int)
+parser.add_argument("--epochs", default="400", type=int)
 parser.add_argument("--lr", default="0.0001", type=float)
 args = parser.parse_args()
 batch_size = 2
